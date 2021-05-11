@@ -1,0 +1,29 @@
+﻿@page
+@model Uwierzytelanie.Pages.ClassModel
+@{
+}
+<center>
+    <h1 class="display-4">Zapisane w sesji</h1>
+    <br />
+    <form method="post">
+        <table border="1">
+            <thead>
+                <tr>
+                    <td align=center><h4>Wyszukiwana Liczba</h4></td>
+                    <td align=center><h4>Wynik</td>
+                    <td align=center><h4>Data wyszukiwania</h4></td>
+                    <td align=center><h4>Edycja</h4></td>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Wyszukania)
+            {
+                <tbody>
+                <td align=center><h6> @Html.DisplayFor(modelItem => item.Liczba)<h6></td>
+                <td align=center><h6>@Html.DisplayFor(modelItem => item.Wynik)</h6></td>
+                <td align=center><h6>@Html.DisplayFor(modelItem => item.Data)</h6></td>
+                <td align=center> <button asp-route-id="@item.Id" class="text-danger">Usun</button> </td>
+                </tbody>
+            }
+        </table>
+    </form>
+</center>

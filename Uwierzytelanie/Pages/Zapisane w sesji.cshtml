@@ -1,0 +1,10 @@
+﻿@page
+@model Uwierzytelanie.Pages.Zapisane_w_sesjiModel
+@{
+}
+@if (Model.Class != null)
+{
+    <p>Wynik: @Model.Class.Wynik</p>
+    <p>Sprawdzana Liczba: @Model.Class.Liczba</p>
+    <p>Data: @Model.Class.Data </p>
+}

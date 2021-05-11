@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Wyszukiwanie FizzBuzz</h1>
+
+    <form method="post">
+
+        <div class="row">
+            <div class="col">
+                <label asp-for="Class.Liczba"></label>
+                <input asp-for="Class.Liczba" placeholder="Liczba" /><br />
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Zatwierdź</button>
+        </div>
+    </form>
+
+    <strong><span asp-validation-for="Class.Liczba" class="text-danger"></span></strong>
+    <div class="wynik">
+        @if (Model.Class != null)
+        {<label> @Model.Class.Wynik</label>}
+    </div>
+</div>
+
